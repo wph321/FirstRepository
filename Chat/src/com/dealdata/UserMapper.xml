@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.dealdata.UserMapper"> 
+	<select id="getUser" parameterType="String" 
+		resultType="com.dealdata.User">
+		select * from usermessage where user_namber=#{usernamber}
+	</select>
+	<insert id="insertUser" parameterType="com.dealdata.User" useGeneratedKeys="true" keyProperty="id">
+
+  insert into usermessage (user_namber,user_passworld,user_name)
+
+  values (#{user_namber},#{user_passworld},#{user_name})
+
+</insert>
+
+<select id="selectUserAll" resultType="com.dealdata.User">
+  select * from  usermessage
+ </select>
+</mapper>
